@@ -15,22 +15,19 @@ var space;
 
 //get elements
 
-var more = function(){
-    for (var i = 0; i < alphabet.length; i++){
-       console.log(alphabet[i]);
-       //document.write(alphabet[i]);
-}
-};
+var text ="";
+var i;
 
+  for (var i = 0; i < alphabet.length; i++){
+      //console.log(alphabet[i]);
+       text += alphabet[i];
+}
 
 //var more = alphabet.forEach(function(element){
  //   document.write(element);
 //});
 
-
-
-var tea = more();
-document.getElementById("alphabet").innerHTML = tea;
+document.getElementById("alphabet").innerHTML = text;
 
 //Generate a random word from the wordBank, store it in randomWord  
 var currentWord = wordBank[Math.floor(Math.random() * wordBank.length)];
