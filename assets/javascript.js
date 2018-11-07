@@ -11,8 +11,9 @@ var incorrectLetters = [];
 
 
 
-$(document).ready(function(){
 
+//Generate a random word from the wordBank, store it in randomWord  
+var randomWord = wordBank[Math.floor(Math.random() * wordBank.length)];
+    console.log(randomWord);
     
 
-});
