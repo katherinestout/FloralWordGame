@@ -1,0 +1,19 @@
+{
+  "name": "politicsgame",
+  "version": "1.0.0",
+  "description": "",
+  "main": "javascript.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/katherinestout/PoliticsGame.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/katherinestout/PoliticsGame/issues"
+  },
+  "homepage": "https://github.com/katherinestout/PoliticsGame#readme"
+}
