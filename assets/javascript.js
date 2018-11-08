@@ -13,21 +13,21 @@ var guessedLetters = [];
 var incorrectLetters = [];
 var space;
 
-//get elements
-
+//for each letter in the alphabet, list it out and create a button
 var text ="";
 var i;
 
   for (var i = 0; i < alphabet.length; i++){
       //console.log(alphabet[i]);
-       text += "<button>" + alphabet[i] + "</button>";
+     //onclick = console.log("hello");
+
+      alphabet.id = alphabet[i];
+      console.log(alphabet.id);
+      text += "<button>" + alphabet[i] + "</button>";
+      
 }
-
-//var more = alphabet.forEach(function(element){
- //   document.write(element);
-//});
-
 document.getElementById("alphabet").innerHTML = text;
+console.log(text);
 
 
 
@@ -35,7 +35,7 @@ document.getElementById("alphabet").innerHTML = text;
 var currentWord = wordBank[Math.floor(Math.random() * wordBank.length)];
     console.log(currentWord);
 
-document.getElementById("hello").innerHTML = currentWord;
+    //document.getElementById("hello").innerHTML = currentWord;
 
 //if the letter they type in the space does not match the current word, put the letter in incorrect lettes
 //if the letter they type in does match one of the current word, put it in guessed letters
