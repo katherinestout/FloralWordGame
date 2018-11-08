@@ -22,12 +22,18 @@ var i;
      //onclick = console.log("hello");
 
       alphabet.id = alphabet[i];
-      console.log(alphabet.id);
+      
+      
       text += "<button>" + alphabet[i] + "</button>";
+    //console.log(alphabet.id);
+  // console.log(alphabet[20]);
+   
       
 }
+
+alphabet.forEach(id => console.log(id));
 document.getElementById("alphabet").innerHTML = text;
-console.log(text);
+//console.log(text);
 
 
 
