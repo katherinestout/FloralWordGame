@@ -20,7 +20,7 @@ var i;
 
   for (var i = 0; i < alphabet.length; i++){
       //console.log(alphabet[i]);
-       text += alphabet[i];
+       text += "<button>" + alphabet[i] + "</button>";
 }
 
 //var more = alphabet.forEach(function(element){
@@ -28,6 +28,8 @@ var i;
 //});
 
 document.getElementById("alphabet").innerHTML = text;
+
+
 
 //Generate a random word from the wordBank, store it in randomWord  
 var currentWord = wordBank[Math.floor(Math.random() * wordBank.length)];
