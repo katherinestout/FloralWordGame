@@ -31,10 +31,14 @@ var i;
       
 }
 
-alphabet.forEach(id => console.log(id));
+//alphabet.forEach(id => console.log(id));
+//console.log(text);
 document.getElementById("alphabet").innerHTML = text;
 //console.log(text);
 
+$("#incorrectGuesses").click(function(){
+  console.log("this is a click example");
+});
 
 
 //Generate a random word from the wordBank, store it in randomWord  
