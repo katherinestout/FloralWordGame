@@ -23,7 +23,7 @@ var i;
   for (var i = 0; i < alphabet.length; i++){
       //console.log(alphabet[i]);
      //onclick = console.log("hello");
-      id = alphabet[i];
+   // id = alphabet[i];
    // console.log(id);
       text += "<button>" + alphabet[i] + "</button>";
     //console.log(alphabet.id);
@@ -44,8 +44,12 @@ $("#incorrectGuesses").click(function(){
  function check(){
   $("#alphabet").click(function(){
     alphabet.forEach(value => console.log(value));
+    console.log(Object.values(alphabet));
   });
 }
+
+//when you click on each button console log the value of the letter
+
 console.log(Object.values(alphabet));
 console.log(Object.values(alphabet[20]));
 
@@ -54,8 +58,6 @@ console.log(Object.values(alphabet[20]));
 //Generate a random word from the wordBank, store it in randomWord  
 var currentWord = wordBank[Math.floor(Math.random() * wordBank.length)];
     console.log(currentWord);
-
-    //document.getElementById("hello").innerHTML = currentWord;
 
 //if the letter they type in the space does not match the current word, put the letter in incorrect lettes
 //if the letter they type in does match one of the current word, put it in guessed letters
