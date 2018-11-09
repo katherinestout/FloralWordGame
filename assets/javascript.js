@@ -22,19 +22,6 @@ var space;
 
 
 
-  myButtons = document.getElementById('list');
-  letters = document.createElement('ul');
-  for (var i = 0; i < alphabet.length; i++) {
-    letters.id = 'alphabet';
-    list = document.createElement('li');
-    list.id = 'letter';
-    //console.log(list);
-    list.innerHTML = alphabet[i];
-    myButtons.appendChild(letters);
-    letters.appendChild(list);
-    check();
-  }
-
 //for each letter in the alphabet, list it out and create a button
 var text ="";
 var i;
@@ -43,7 +30,7 @@ for (var i = 0; i < alphabet.length; i++){
    // console.log(letter);
      text += "<button>" + letter + "</button>";
      //value of each button is equal to the letter in the button
-  //check();
+  check();
 }
 //alphabet.forEach(value => console.log(value));
 document.getElementById("alphabet").innerHTML = text;
