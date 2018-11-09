@@ -6,6 +6,10 @@ var alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm',
 //variables
 //for each item in array, attach an id or value
 
+/*
+for (let value of Object.values(alphabet)){
+  console.log(value);
+}*/
 
 var wins = 0;
 var losses = 0;
@@ -24,18 +28,19 @@ var space;
     letters.id = 'alphabet';
     list = document.createElement('li');
     list.id = 'letter';
+    //console.log(list);
     list.innerHTML = alphabet[i];
-   
     myButtons.appendChild(letters);
     letters.appendChild(list);
     check();
   }
+
 //for each letter in the alphabet, list it out and create a button
 var text ="";
 var i;
 for (var i = 0; i < alphabet.length; i++){
     var letter = alphabet[i];
-    console.log(letter);
+   // console.log(letter);
      text += "<button>" + letter + "</button>";
      //value of each button is equal to the letter in the button
   //check();
@@ -43,18 +48,18 @@ for (var i = 0; i < alphabet.length; i++){
 //alphabet.forEach(value => console.log(value));
 document.getElementById("alphabet").innerHTML = text;
 //alphabet.forEach(id => console.log(id));
-//console.log(text);
+
  function check(){
   $("body").on("click", "#alphabet button", function(){
-    //$("body").on("click", "ul li", function(){
+   // $("body").on("click", "#list ul li", function(){
   // alphabet.forEach(value => console.log(value));
     //console.log(Object.values(alphabet));
-  // console.log();
-  console.log("hi");
-  
+    console.log(this);
 
   });
 }
+
+
 
 //when you click on each button console log the value of the letter
 
