@@ -25,28 +25,32 @@ $.each(alphabet, function(key, value){
 //for each letter in the alphabet, list it out and create a button
 
 var text ="";
-//var i;
+var i;
 
-
-
-  for (var i = 0; i < alphabet.length; i++){
-      
-     text += "<button>" + alphabet[i] + "</button>";
-  // console.log(alphabet[20]);
-  //console.log(i );
+for (var i = 0; i < alphabet.length; i++){
+    var letter = alphabet[i];
+    console.log(letter);
+  
+     text += "<button>" + letter + "</button>";
+     
+     
+     //value of each button is equal to the letter in the button
   check();
 }
-     document.getElementById("alphabet").innerHTML = text;
+//alphabet.forEach(value => console.log(value));
+
+document.getElementById("alphabet").innerHTML = text;
 
 //alphabet.forEach(id => console.log(id));
 //console.log(text);
 
-
  function check(){
   $("body").on("click", "#alphabet button", function(){
-   // alphabet.forEach(value => console.log(value));
+  // alphabet.forEach(value => console.log(value));
     //console.log(Object.values(alphabet));
-    console.log("yee");
+  // console.log();
+  console.log(letter);
+  
 
   });
 }
