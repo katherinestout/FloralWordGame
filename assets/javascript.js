@@ -10,18 +10,12 @@ var alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm',
 for (let value of Object.values(alphabet)){
   console.log(value);
 }*/
-
 var wins = 0;
 var losses = 0;
-
 var guessesLeft = 10;
-
 var guessedLetters = [];
 var incorrectLetters = [];
 var space;
-
-
-
 //for each letter in the alphabet, list it out and create a button
 var text ="";
 var i;
@@ -40,9 +34,12 @@ document.getElementById("alphabet").innerHTML = text;
   $("body").on("click", "#alphabet button", function(){
    // $("body").on("click", "#list ul li", function(){
   // alphabet.forEach(value => console.log(value));
-    //console.log(Object.values(alphabet));
-    console.log(this.innerHTML);
+   
+    //console.log(this.innerHTML);
+    var guess = this.innerHTML;
+    console.log(guess);
 
+    //if guess letter is in any of the word, consolelog yaya
   });
 }
 
