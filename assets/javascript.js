@@ -15,41 +15,42 @@ var guessesLeft = 10;
 var guessedLetters = [];
 var incorrectLetters = [];
 var space;
-/*
-$.each(alphabet, function(key, value){
-  $('#' + key + '<button>').click(function(){
-    $('.'+key).append(value);
-  });
-});*/
 
+
+
+  myButtons = document.getElementById('list');
+  letters = document.createElement('ul');
+  for (var i = 0; i < alphabet.length; i++) {
+    letters.id = 'alphabet';
+    list = document.createElement('li');
+    list.id = 'letter';
+    list.innerHTML = alphabet[i];
+   
+    myButtons.appendChild(letters);
+    letters.appendChild(list);
+    check();
+  }
 //for each letter in the alphabet, list it out and create a button
-
 var text ="";
 var i;
-
 for (var i = 0; i < alphabet.length; i++){
     var letter = alphabet[i];
     console.log(letter);
-  
      text += "<button>" + letter + "</button>";
-     
-     
      //value of each button is equal to the letter in the button
-  check();
+  //check();
 }
 //alphabet.forEach(value => console.log(value));
-
 document.getElementById("alphabet").innerHTML = text;
-
 //alphabet.forEach(id => console.log(id));
 //console.log(text);
-
  function check(){
   $("body").on("click", "#alphabet button", function(){
+    //$("body").on("click", "ul li", function(){
   // alphabet.forEach(value => console.log(value));
     //console.log(Object.values(alphabet));
   // console.log();
-  console.log(letter);
+  console.log("hi");
   
 
   });
@@ -58,7 +59,7 @@ document.getElementById("alphabet").innerHTML = text;
 //when you click on each button console log the value of the letter
 
   //console.log(Object.values(alphabet));
-  console.log(Object.values(alphabet[20]));
+ // console.log(Object.values(alphabet[20]));
 
 //console log each value of each item in array
 
