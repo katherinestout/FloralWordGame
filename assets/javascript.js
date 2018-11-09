@@ -54,7 +54,7 @@ document.getElementById("alphabet").innerHTML = text;
    // $("body").on("click", "#list ul li", function(){
   // alphabet.forEach(value => console.log(value));
     //console.log(Object.values(alphabet));
-    console.log(this);
+    console.log(this.innerHTML);
 
   });
 }
