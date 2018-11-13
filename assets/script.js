@@ -53,22 +53,30 @@ var text ="";
 
 var iterator = alphabet.values();
 for (const value of iterator){
-      var btnval = value;
-     text += "<button>" + btnval + "</button>";
+      var btnval;
+       btnval = value;
+    
+    text += "<button>" + btnval + "</button>";
+    $("<button>", {id: value}).appendTo('body');
+   
 
 }
+document.getElementById("alphabet").innerHTML = text;
+//assign each button a click event
 btnval.onclick = check();
+
   function check(){
-    $("body").on("click", "#alphabet button", function(){
+    $("body").on("click", "button", function(){
       //console.log(this.innerHTML);
       //everytie you click a button you get the value of that letter
         console.log(this);
+        console.log(this.id);
       //if guess letter is in any of the word, consolelog yaya
     });
   }
 
 //alphabet.forEach(value => console.log(value));
-document.getElementById("alphabet").innerHTML = text;
+
 //alphabet.forEach(id => console.log(id));
   });
 }
