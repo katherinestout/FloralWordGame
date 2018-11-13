@@ -16,13 +16,15 @@ var guessesLeft = 10;
 var guessedLetters = [];
 var incorrectLetters = [];
 var space;
+
 //for each letter in the alphabet, list it out and create a button
 var text ="";
 var i;
 for (var i = 0; i < alphabet.length; i++){
     var letter = alphabet[i];
      text += "<button>" + letter + "</button>";
-     
+
+
   check();
 }
 //alphabet.forEach(value => console.log(value));
@@ -41,11 +43,32 @@ document.getElementById("alphabet").innerHTML = text;
 }
 
 
+let add_btns = document.querySelector('.btn');
+add_btns.addEventListener("click", function(){
+
+  let btn = document.createElement("BUTTON");
+  alphabet.push(document.body.appendChild(btn));
+  i++;
+  for (let button in alphabet){
+    btn.setAttribute('id', 'button' + button);
+    btn.innerHTML = "Button #" + button;
+  
+    btn.addEventListener("click", function () {
+      let id = this.id;
+      alert("my id is: " + id);
+  });
+  }
+})
+
+
 function start(){
   $("body").on("click", "#start", function(){
 //Generate a random word from the wordBank, store it in randomWord  
 var currentWord = wordBank[Math.floor(Math.random() * wordBank.length)];
     console.log(currentWord);
+    
+
+  
 
   });
 }
