@@ -56,7 +56,7 @@ for (const value of iterator){
       var btnval;
        btnval = value;
     
-    text += "<button>" + btnval + "</button>";
+  //  text += "<button>" + btnval + "</button>";
     $("<button>", {id: value}).appendTo('body');
    
 
