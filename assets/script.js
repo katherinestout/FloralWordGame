@@ -21,9 +21,8 @@ var text ="";
 var i;
 for (var i = 0; i < alphabet.length; i++){
     var letter = alphabet[i];
-   // console.log(letter);
      text += "<button>" + letter + "</button>";
-     //value of each button is equal to the letter in the button
+     
   check();
 }
 //alphabet.forEach(value => console.log(value));
@@ -34,17 +33,23 @@ document.getElementById("alphabet").innerHTML = text;
   $("body").on("click", "#alphabet button", function(){
    // $("body").on("click", "#list ul li", function(){
   // alphabet.forEach(value => console.log(value));
-   
     //console.log(this.innerHTML);
     var guess = this.innerHTML;
     console.log(guess);
-
     //if guess letter is in any of the word, consolelog yaya
   });
 }
 
 
+function start(){
+  $("body").on("click", "#start", function(){
+//Generate a random word from the wordBank, store it in randomWord  
+var currentWord = wordBank[Math.floor(Math.random() * wordBank.length)];
+    console.log(currentWord);
 
+  });
+}
+start();
 //when you click on each button console log the value of the letter
 
   //console.log(Object.values(alphabet));
@@ -52,9 +57,6 @@ document.getElementById("alphabet").innerHTML = text;
 
 //console log each value of each item in array
 
-//Generate a random word from the wordBank, store it in randomWord  
-var currentWord = wordBank[Math.floor(Math.random() * wordBank.length)];
-    console.log(currentWord);
 
 //if the letter they type in the space does not match the current word, put the letter in incorrect lettes
 //if the letter they type in does match one of the current word, put it in guessed letters
