@@ -4,6 +4,12 @@ var wordBank = ['republican', 'democrat', 'trump', 'whitehouse', 'DC', 'vote'];
 var alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n',
                     'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']; 
 
+
+                    var keys = Object.keys(alphabet);
+                    for(i=0; i< keys.length; i++){
+                      var value = alphabet[keys[i]];
+                      console.log(keys[i],value);
+                    }
                    
 //variables
 //for each item in array, attach an id or value
@@ -56,7 +62,7 @@ for (const value of iterator){
       var btnval;
        btnval = value;
     
-  //  text += "<button>" + btnval + "</button>";
+    text += "<button>" + btnval + "</button>";
     $("<button>", {id: value}).appendTo('body');
    
 
@@ -69,7 +75,7 @@ btnval.onclick = check();
     $("body").on("click", "button", function(){
       //console.log(this.innerHTML);
       //everytie you click a button you get the value of that letter
-        console.log(this);
+        //console.log(this);
         console.log(this.id);
       //if guess letter is in any of the word, consolelog yaya
     });
