@@ -21,6 +21,7 @@ var answerArray = [];
 //stores the incorrect guessed letters
 var incorrectLetters = [];
 var space;
+var count = 0;
 
 
 var text ="";
@@ -42,11 +43,11 @@ function start(){
 var currentWord = wordBank[Math.floor(Math.random() * wordBank.length)];
     console.log(currentWord);
 
+//Generate spaces for how many letters currentWord has
 function spaces(){
   for(var i =0; i < currentWord.length; i++){
     answerArray[i] = "_";
   }
-
   space = answerArray.join(" ");
   document.getElementById("answer").innerHTML = space;
 }
@@ -64,15 +65,30 @@ for (const value of iterator){
     $("<button>", {id: value}).appendTo('body');
 }
 document.getElementById("alphabet").innerHTML = text;
+
+
 //assign each button a click event
 btnval.onclick = check();
+
   function check(){
     $("body").on("click", "button", function(){
-      //console.log(this.innerHTML);
-      //everytie you click a button you get the value of that letter
-        //console.log(this);
-        console.log(this.id);
-      //if guess letter is in any of the word, consolelog yaya
+   
+        //console.log(this.id);
+        var letter = this.id;
+        console.log(letter);
+        letter = document.getElementById("letter").value;
+     
+      //if letter is equal to any of the current word letters...
+      for(var i = 0; i < currentWord.length; i++){
+      if(letter === currentWord[i]){
+        //then add it to the answer array?
+        answerArray[i] = letter;
+      }
+      count ++;
+      document.getElementById("counter").innerHTML = "no" + count;
+      document.getElementById("answer").innerHTML = answerArray.join(" ");
+
+    };
     });
   }
 
