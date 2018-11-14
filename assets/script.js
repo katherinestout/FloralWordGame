@@ -14,14 +14,13 @@ for (let value of Object.values(alphabet)){
 }*/
 var wins = 0;
 var losses = 0;
+//10 guesses
 var guessesLeft = 10;
-var guessedLetters = [];
+//stores the guessed letters
+var answerArray = [];
+//stores the incorrect guessed letters
 var incorrectLetters = [];
 var space;
-
-
-
-
 
 
 var text ="";
@@ -42,6 +41,16 @@ function start(){
 //Generate a random word from the wordBank, store it in randomWord  
 var currentWord = wordBank[Math.floor(Math.random() * wordBank.length)];
     console.log(currentWord);
+
+function spaces(){
+  for(var i =0; i < currentWord.length; i++){
+    answerArray[i] = "_";
+  }
+
+  space = answerArray.join(" ");
+  document.getElementById("answer").innerHTML = space;
+}
+spaces();
 
    //for each letter in the alphabet, list it out and create a button
 
