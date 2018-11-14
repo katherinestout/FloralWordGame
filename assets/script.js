@@ -3,11 +3,6 @@ window.onload = function(){
 var wordBank = ['republican', 'democrat', 'trump', 'whitehouse', 'DC', 'vote'];
 var alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n',
                     'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']; 
-
-
-//variables
-//for each item in array, attach an id or value
-
 /*
 for (let value of Object.values(alphabet)){
   console.log(value);
@@ -20,24 +15,16 @@ var guessesLeft = 10;
 var answerArray = [];
 //stores the incorrect guessed letters
 var incorrectLetters = [];
+
+console.log(incorrectLetters);
 var space;
 var count = 0;
 
-
 var text ="";
+
+//clicking start button
 function start(){
   $("body").on("click", "#start", function(){
-    /*
-    var keys = Object.keys(alphabet);
-    for(i=0; i< keys.length; i++){
-      var value = alphabet[keys[i]];
-      console.log(keys[i],value);
-
-     text += "<button>" + value + "</button>";
-     // $("<button>", {id: value}).appendTo('body');
-      
-    }
-   */
 
 //Generate a random word from the wordBank, store it in randomWord  
 var currentWord = wordBank[Math.floor(Math.random() * wordBank.length)];
@@ -53,10 +40,7 @@ function spaces(){
 }
 spaces();
 
-   //for each letter in the alphabet, list it out and create a button
-
-//var text="";
-
+//for each letter in the alphabet, list it out and create a button
 var iterator = alphabet.values();
 for (const value of iterator){
       var btnval;
@@ -76,17 +60,19 @@ btnval.onclick = check();
         //console.log(this.id);
         var letter = this.id;
         console.log(letter);
-        letter = document.getElementById("letter").value;
-     
+       // letter = document.getElementById("letter").value;
+       // incorrectLetters.push(letter);
+       // console.log(incorrectLetters);
       //if letter is equal to any of the current word letters...
       for(var i = 0; i < currentWord.length; i++){
       if(letter === currentWord[i]){
         //then add it to the answer array?
-        answerArray[i] = letter;
+       answerArray.push(letter);
+       console.log(answerArray);
       }
       }
       count ++;
-      document.getElementById("counter").innerHTML = "no" + count;
+      document.getElementById("counter").innerHTML = "Guesses:" + count;
       document.getElementById("answer").innerHTML = answerArray.join(" ");
 
     
