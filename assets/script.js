@@ -84,11 +84,12 @@ btnval.onclick = check();
         //then add it to the answer array?
         answerArray[i] = letter;
       }
+      }
       count ++;
       document.getElementById("counter").innerHTML = "no" + count;
       document.getElementById("answer").innerHTML = answerArray.join(" ");
 
-    };
+    
     });
   }
 
