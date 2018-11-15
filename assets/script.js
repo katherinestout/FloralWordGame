@@ -66,15 +66,19 @@ btnval.onclick = check();
             answerArray.push(letter);
             console.log(answerArray);
             
-            } else if(letter !== currentWord[i]) {
-              incorrectArray.push(letter);
+            } 
+          }
+
+          if(letter !== currentWord[i]){
+            incorrectArray.push(letter);
               console.log(incorrectArray);
-            }
           }
 
       count ++;
       document.getElementById("guesses").innerHTML = "Guesses:" + count;
       document.getElementById("answer").innerHTML = answerArray.join(" ");
+
+      document.getElementById("incorrect").innerHTML = incorrectArray.join(" ");
 
       //if the user goes over 20 tries, their loser score goes up
       if (count>20){
