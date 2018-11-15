@@ -26,7 +26,7 @@ function start(){
 
 //Generate a random word from the wordBank, store it in randomWord  
 var str = wordBank[Math.floor(Math.random() * wordBank.length)];
-    console.log(str);
+    //console.log(str);
 //convert str to lower case letters
 var currentWord = str.toLowerCase();
     console.log(currentWord);
@@ -58,20 +58,20 @@ btnval.onclick = check();
   function check(){
     $("body").on("click", "button", function(){
         var letter = this.id;
-        console.log(letter);
+        //console.log(letter);
       //if letter is equal to any of the current word letters...
       for(var i = 0; i < currentWord.length; i++){
           if(letter === currentWord[i]){
             //then add it to the answer array
             answerArray.push(letter);
             console.log(answerArray);
+            
+            } else if(letter !== currentWord[i]) {
+              incorrectArray.push(letter);
+              console.log(incorrectArray);
             }
-      //...if it isn't in answerArray, push it to incorrect array
-      if (letter !== currentWord[i]){
-        incorrectArray.push(letter);
-        console.log(incorrectArray);
-      }
-      }
+          }
+
       count ++;
       document.getElementById("guesses").innerHTML = "Guesses:" + count;
       document.getElementById("answer").innerHTML = answerArray.join(" ");
