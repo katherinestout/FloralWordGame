@@ -14,7 +14,7 @@ var guessesLeft = 10;
 //stores the guessed letters
 var answerArray = [];
 //stores the incorrect guessed letters
-var incorrectArray = [];
+//var incorrectArray = [];
 //console.log(incorrectLetters);
 var space;
 var count = 0;
@@ -54,9 +54,10 @@ document.getElementById("alphabet").innerHTML = text;
 
 //assign each button a click event
 btnval.onclick = check();
-
+var incorrectArray = [];
   function check(){
     $("body").on("click", "button", function(){
+        
         var letter = this.id;
         //console.log(letter);
       //if letter is equal to any of the current word letters...
@@ -68,10 +69,9 @@ btnval.onclick = check();
             
             } 
           }
-
           if(letter !== currentWord[i]){
             incorrectArray.push(letter);
-              console.log(incorrectArray);
+            console.log(incorrectArray);
           }
 
       count ++;
