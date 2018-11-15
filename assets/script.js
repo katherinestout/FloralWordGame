@@ -14,12 +14,10 @@ var guessesLeft = 10;
 //stores the guessed letters
 var answerArray = [];
 //stores the incorrect guessed letters
-var incorrectLetters = [];
-
+var incorrectArray = [];
 //console.log(incorrectLetters);
 var space;
 var count = 0;
-
 var text ="";
 
 //clicking start button
@@ -59,19 +57,19 @@ btnval.onclick = check();
 
   function check(){
     $("body").on("click", "button", function(){
-   
-        //console.log(this.id);
         var letter = this.id;
         console.log(letter);
-       // letter = document.getElementById("letter").value;
-       // incorrectLetters.push(letter);
-       // console.log(incorrectLetters);
       //if letter is equal to any of the current word letters...
       for(var i = 0; i < currentWord.length; i++){
-      if(letter === currentWord[i]){
-        //then add it to the answer array?
-       answerArray.push(letter);
-       console.log(answerArray);
+          if(letter === currentWord[i]){
+            //then add it to the answer array
+            answerArray.push(letter);
+            console.log(answerArray);
+            }
+      //...if it isn't in answerArray, push it to incorrect array
+      if (letter !== currentWord[i]){
+        incorrectArray.push(letter);
+        console.log(incorrectArray);
       }
       }
       count ++;
@@ -83,7 +81,6 @@ btnval.onclick = check();
          alert("You lose! Try again.");
          losses ++;
          document.getElementById("losses").innerHTML = "Losses:" + losses; 
-        
       }
     });
   }
