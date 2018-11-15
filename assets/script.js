@@ -1,6 +1,6 @@
 window.onload = function(){
 //arrays
-var wordBank = ['republican', 'democrat', 'trump', 'whitehouse', 'DC', 'vote'];
+var wordBank = ['Republican', 'Democrat', 'Trump', 'Whitehouse', 'DC', 'vote'];
 var alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n',
                     'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']; 
 /*
@@ -16,7 +16,7 @@ var answerArray = [];
 //stores the incorrect guessed letters
 var incorrectLetters = [];
 
-console.log(incorrectLetters);
+//console.log(incorrectLetters);
 var space;
 var count = 0;
 
@@ -27,7 +27,10 @@ function start(){
   $("body").on("click", "#start", function(){
 
 //Generate a random word from the wordBank, store it in randomWord  
-var currentWord = wordBank[Math.floor(Math.random() * wordBank.length)];
+var str = wordBank[Math.floor(Math.random() * wordBank.length)];
+    console.log(str);
+
+var currentWord = str.toLowerCase();
     console.log(currentWord);
 
 //Generate spaces for how many letters currentWord has
