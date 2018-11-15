@@ -29,7 +29,7 @@ function start(){
 //Generate a random word from the wordBank, store it in randomWord  
 var str = wordBank[Math.floor(Math.random() * wordBank.length)];
     console.log(str);
-
+//convert str to lower case letters
 var currentWord = str.toLowerCase();
     console.log(currentWord);
 
@@ -75,15 +75,19 @@ btnval.onclick = check();
       }
       }
       count ++;
-      document.getElementById("counter").innerHTML = "Guesses:" + count;
+      document.getElementById("guesses").innerHTML = "Guesses:" + count;
       document.getElementById("answer").innerHTML = answerArray.join(" ");
 
-    
+      //if the user goes over 20 tries, their loser score goes up
+      if (count>20){
+         alert("You lose! Try again.");
+         losses ++;
+         document.getElementById("losses").innerHTML = "Losses:" + losses; 
+        
+      }
     });
   }
-
 //alphabet.forEach(value => console.log(value));
-
 //alphabet.forEach(id => console.log(id));
   });
 }
