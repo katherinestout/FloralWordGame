@@ -2,6 +2,7 @@ body {
     padding: 30px;
 }
 
-h1 {
+.container {
     font-family: 'Shadows Into Light', cursive;
+    text-align: center;
 }
