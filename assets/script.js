@@ -35,11 +35,11 @@ for (const value of iterator){
        btnval = value;
   //  text += "<button>" + btnval + "</button>";
 
-    $("<button>", {id: value}).appendTo('body').text(value);
+    $("<button>", {id: value}).appendTo('.alphabet').text(value);
     //document.body.appendChild(document.createElement('button'));
   
 }
-document.getElementById("alphabet").innerHTML = text;
+document.getElementsByClassName(".alphabet").innerHTML = text;
 
 //assign each button a click event
 btnval.onclick = check();
