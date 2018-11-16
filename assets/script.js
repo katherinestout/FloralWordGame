@@ -3,10 +3,6 @@ window.onload = function(){
 var wordBank = ['Republican', 'Democrat', 'Trump', 'Whitehouse', 'DC', 'vote'];
 var alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n',
                     'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']; 
-/*
-for (let value of Object.values(alphabet)){
-  console.log(value);
-}*/
 
 var wins = 0;
 var losses = 0;
@@ -16,19 +12,16 @@ var space;
 var count = 0;
 var text ="";
 
-//clicking start button
-function start(){
-  $("body").on("click", "#start", function(){
+
 
 //Generate a random word from the wordBank, store it in randomWord  
 var str = wordBank[Math.floor(Math.random() * wordBank.length)];
-    //console.log(str);
 //convert str to lower case letters
 var currentWord = str.toLowerCase();
     console.log(currentWord);
+  
 
 //Generate spaces for how many letters currentWord has
-
   for(var i =0; i < currentWord.length; i++){
     answerArray[i] = "_";
   }
@@ -38,16 +31,18 @@ var currentWord = str.toLowerCase();
 //for each letter in the alphabet, list it out and create a button
 var iterator = alphabet.values();
 for (const value of iterator){
-      var btnval;
+       var btnval;
        btnval = value;
   //  text += "<button>" + btnval + "</button>";
-    $("<button>", {id: value}).appendTo('body');
+
+    $("<button>", {id: value}).appendTo('body').text(value);
+    //document.body.appendChild(document.createElement('button'));
+  
 }
 document.getElementById("alphabet").innerHTML = text;
 
 //assign each button a click event
 btnval.onclick = check();
-
   function check(){
     $("body").on("click", "button", function(){
         //letter is equal to the id of the button (which is the letter)
@@ -78,10 +73,9 @@ btnval.onclick = check();
          alert("You lose! Try again ^__^");
          losses ++;
          document.getElementById("losses").innerHTML = "Losses:" + losses; 
+        // start();
       }
     });
   }
-  });
-}
-start();
-}
+  };
+
