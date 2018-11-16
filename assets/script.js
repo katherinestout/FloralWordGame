@@ -7,15 +7,13 @@ var alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm',
 for (let value of Object.values(alphabet)){
   console.log(value);
 }*/
+
 var wins = 0;
 var losses = 0;
-//10 guesses
-var guessesLeft = 10;
 //stores the guessed letters
 var answerArray = [];
 //stores the incorrect guessed letters
-//var incorrectArray = [];
-//console.log(incorrectLetters);
+
 var space;
 var count = 0;
 var text ="";
@@ -32,14 +30,12 @@ var currentWord = str.toLowerCase();
     console.log(currentWord);
 
 //Generate spaces for how many letters currentWord has
-function spaces(){
+
   for(var i =0; i < currentWord.length; i++){
     answerArray[i] = "_";
   }
   space = answerArray.join(" ");
   document.getElementById("answer").innerHTML = space;
-}
-spaces();
 
 //for each letter in the alphabet, list it out and create a button
 var iterator = alphabet.values();
@@ -51,35 +47,34 @@ for (const value of iterator){
 }
 document.getElementById("alphabet").innerHTML = text;
 
-
 //assign each button a click event
 btnval.onclick = check();
-var incorrectArray = [];
+var incorrectGuess = [];
+
   function check(){
     $("body").on("click", "button", function(){
-        
         var letter = this.id;
-        //console.log(letter);
+
       //if letter is equal to any of the current word letters...
       for(var i = 0; i < currentWord.length; i++){
           if(letter === currentWord[i]){
+            var found = false;
             //then add it to the answer array
-            answerArray.push(letter);
-            console.log(answerArray);
-            
+            answerArray[i] = letter;
+            document.getElementById("answer").innerHTML = answerArray.join(" ");
+            found = true;
             } 
           }
-          if(letter !== currentWord[i]){
-            incorrectArray.push(letter);
-            console.log(incorrectArray);
-          }
+         if (found) return;
 
+         if(incorrectGuess.indexOf(letter) < 0){
+           incorrectGuess.push(letter);
+           document.getElementById("incorrect").innerHTML = incorrectGuess.join(" ");
+         }
+      //the count goes up every time a guess is made
       count ++;
       document.getElementById("guesses").innerHTML = "Guesses:" + count;
-      document.getElementById("answer").innerHTML = answerArray.join(" ");
-
-      document.getElementById("incorrect").innerHTML = incorrectArray.join(" ");
-
+    
       //if the user goes over 20 tries, their loser score goes up
       if (count>20){
          alert("You lose! Try again.");
