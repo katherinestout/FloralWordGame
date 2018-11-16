@@ -67,15 +67,22 @@ btnval.onclick = check();
       //the count goes up every time a guess is made
       count ++;
       document.getElementById("guesses").innerHTML = "Guesses:" + count;
-    
       //if the user goes over 20 tries, their loser score goes up
       if (count>20){
          alert("You lose! Try again ^__^");
          losses ++;
          document.getElementById("losses").innerHTML = "Losses:" + losses; 
-        // start();
       }
+       //if all the letters in array are guessed, add to wins ++
+       //if all letters in answer arrray have been guessed
+       //if there are no more spaces
+       if ( answerArray === currentWord ){
+        alert("you win!");
+        wins ++;
+        document.getElementById("wins").innerHTML = "Wins:" + wins;
+       }
+       
     });
-  }
   };
+};
 
