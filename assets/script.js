@@ -10,10 +10,8 @@ for (let value of Object.values(alphabet)){
 
 var wins = 0;
 var losses = 0;
-//stores the guessed letters
 var answerArray = [];
-//stores the incorrect guessed letters
-
+var incorrectGuess = [];
 var space;
 var count = 0;
 var text ="";
@@ -49,24 +47,24 @@ document.getElementById("alphabet").innerHTML = text;
 
 //assign each button a click event
 btnval.onclick = check();
-var incorrectGuess = [];
 
   function check(){
     $("body").on("click", "button", function(){
+        //letter is equal to the id of the button (which is the letter)
         var letter = this.id;
-
-      //if letter is equal to any of the current word letters...
       for(var i = 0; i < currentWord.length; i++){
+          //if letter is equal to any of the current word letters
           if(letter === currentWord[i]){
             var found = false;
             //then add it to the answer array
             answerArray[i] = letter;
             document.getElementById("answer").innerHTML = answerArray.join(" ");
+            //checking if the letter is found
             found = true;
             } 
           }
          if (found) return;
-
+        //but if the letter isn't found add letter to the incorrectguess array
          if(incorrectGuess.indexOf(letter) < 0){
            incorrectGuess.push(letter);
            document.getElementById("incorrect").innerHTML = incorrectGuess.join(" ");
@@ -77,18 +75,13 @@ var incorrectGuess = [];
     
       //if the user goes over 20 tries, their loser score goes up
       if (count>20){
-         alert("You lose! Try again.");
+         alert("You lose! Try again ^__^");
          losses ++;
          document.getElementById("losses").innerHTML = "Losses:" + losses; 
       }
     });
   }
-//alphabet.forEach(value => console.log(value));
-//alphabet.forEach(id => console.log(id));
   });
 }
 start();
-//when you click on each button console log the value of the letter
-  //console.log(Object.values(alphabet));
-  //console.log(Object.values(alphabet[20]));
 }
