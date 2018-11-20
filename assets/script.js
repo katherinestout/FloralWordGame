@@ -11,9 +11,11 @@ var incorrectGuess = [];
 var space;
 var count = 0;
 var text ="";
+var lettersLeft = 0;
 
 function reset(){
  // ranWord();
+ //lettersLeft=0;
 console.log("yay");
 }
 
@@ -23,6 +25,10 @@ var str = wordBank[Math.floor(Math.random() * wordBank.length)];
 //convert str to lower case letters
 var currentWord = str.toLowerCase();
     console.log(currentWord);
+
+//lettersLeft is how many letters are in the word
+lettersLeft = currentWord.length;
+console.log(lettersLeft);
 
 //Generate spaces for how many letters currentWord has
   for(var i =0; i < currentWord.length; i++){
@@ -63,6 +69,9 @@ btnval.onclick = check();
             document.getElementById("answer").innerHTML = answerArray.join(" ");
             //checking if the letter is found
             found = true;
+            //take away from lettersLeft
+            lettersLeft --;
+            console.log(lettersLeft);
             } 
           }
          if (found) return;
@@ -81,7 +90,7 @@ btnval.onclick = check();
          document.getElementById("losses").innerHTML = "Losses:" + losses; 
          reset();
       }
-       if ( answerArray === currentWord ){
+       if ( lettersLeft == 0 ){
         alert("you win!");
         wins ++;
         document.getElementById("wins").innerHTML = "Wins:" + wins;
