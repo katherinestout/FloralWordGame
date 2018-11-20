@@ -72,6 +72,11 @@ btnval.onclick = check();
             //take away from lettersLeft
             lettersLeft --;
             console.log(lettersLeft);
+            // - - -- - -  -- - - - - - -  -- -- - - - - why does it work up here? but not down there?
+            if ( lettersLeft == 0 ){
+              alert("you win!");
+              wins ++;
+              document.getElementById("wins").innerHTML = "Wins:" + wins;}
             } 
           }
          if (found) return;
