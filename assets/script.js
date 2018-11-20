@@ -12,6 +12,10 @@ var space;
 var count = 0;
 var text ="";
 
+function reset(){
+ // ranWord();
+console.log("yay");
+}
 
 
 //Generate a random word from the wordBank, store it in randomWord  
@@ -19,7 +23,6 @@ var str = wordBank[Math.floor(Math.random() * wordBank.length)];
 //convert str to lower case letters
 var currentWord = str.toLowerCase();
     console.log(currentWord);
-  
 
 //Generate spaces for how many letters currentWord has
   for(var i =0; i < currentWord.length; i++){
@@ -41,8 +44,12 @@ for (const value of iterator){
 }
 document.getElementsByClassName(".alphabet").innerHTML = text;
 
+
+
+
 //assign each button a click event
 btnval.onclick = check();
+
   function check(){
     $("body").on("click", "button", function(){
         //letter is equal to the id of the button (which is the letter)
@@ -69,17 +76,18 @@ btnval.onclick = check();
       document.getElementById("guesses").innerHTML = "Guesses:" + count;
       //if the user goes over 20 tries, their loser score goes up
       if (count>20){
-         alert("You lose! Try again ^__^");
+         //alert("You lose! Try again ^__^");
          losses ++;
          document.getElementById("losses").innerHTML = "Losses:" + losses; 
+         reset();
       }
-       //if all the letters in array are guessed, add to wins ++
-       //if all letters in answer arrray have been guessed
-       //if there are no more spaces
        if ( answerArray === currentWord ){
         alert("you win!");
         wins ++;
         document.getElementById("wins").innerHTML = "Wins:" + wins;
+        // reset current word and reset incorrect/ correct guesses and guess
+      reset();
+
        }
        
     });
