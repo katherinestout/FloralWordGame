@@ -6,6 +6,7 @@ var alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm',
 
 var wins = 0;
 var losses = 0;
+
 var answerArray = [];
 var incorrectGuess = [];
 var space;
@@ -74,7 +75,7 @@ btnval.onclick = check();
             console.log(lettersLeft);
             // - - -- - -  -- - - - - - -  -- -- - - - - why does it work up here? but not down there?
             if ( lettersLeft == 0 ){
-              alert("you win!");
+             // alert("you win!");
               wins ++;
               document.getElementById("wins").innerHTML = "Wins:" + wins;}
             } 
@@ -95,14 +96,14 @@ btnval.onclick = check();
          document.getElementById("losses").innerHTML = "Losses:" + losses; 
          reset();
       }
-       if ( lettersLeft == 0 ){
+       /*if ( lettersLeft == 0 ){
         alert("you win!");
         wins ++;
         document.getElementById("wins").innerHTML = "Wins:" + wins;
         // reset current word and reset incorrect/ correct guesses and guess
       reset();
 
-       }
+       } */
        
     });
   };
