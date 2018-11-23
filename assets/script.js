@@ -56,7 +56,8 @@ console.log(wordIndex);
 //matches the index of the corresponding hint
 var hintIndex = wordIndex;
 console.log(hintIndex);
-hint = hints.indexOf(hintIndex);
+
+hint = hints.indexOf('Elephant');
 console.log(hint);
 
 
