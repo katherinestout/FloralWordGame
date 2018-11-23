@@ -19,6 +19,8 @@ var count = 0;
 var text ="";
 var lettersLeft = 0;
 
+var hint = "";
+
 function reset(){
  // ranWord();
  //lettersLeft=0;
@@ -26,21 +28,24 @@ console.log("yay");
 }
 
 
-//getting the index of the current word and hint to bind them
-//you could also put the hints and the word in an object...but for the sake of this we will just bind them
-var wordIndex = wordBank.indexOf(wordBank);
-console.log(wordIndex);
-//var hintIndex = wordBank.indexOf(currentWord);
+var hintIndex = "";
+var wordIndex = "";
 
 //showClue.innerHTML = "clue" + hints [wordIndex][hintIndex];
 
+/*
+var catagoryIndex = categories.indexOf(chosenCategory);
+var hintIndex = chosenCategory.indexOf(word);
+showClue.innerHTML = "Clue: - " +  hints [catagoryIndex][hintIndex];
 
-
-
-
+*/
 
 //Generate a random word from the wordBank, store it in randomWord  
 var str = wordBank[Math.floor(Math.random() * wordBank.length)];
+
+var another = wordBank.indexOf(str);
+console.log(another);
+
 //convert str to lower case letters
 var currentWord = str.toLowerCase();
     console.log(currentWord);
