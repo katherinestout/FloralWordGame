@@ -1,8 +1,18 @@
 window.onload = function(){
 //arrays
-var wordBank = ['Republican', 'Democrat', 'Trump', 'Whitehouse', 'DC', 'vote'];
+var wordBank = [
+          'Republican', 'Democrat', 'Trump', 'Whitehouse', 'DC', 'vote'];
+          var other = [{word: 'Republican',
+                      hint: 'Elephant'},
+                      {word: 'Democrat',
+                      hint: 'Donkey'}
+                      ];
+                      
 var alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n',
                     'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']; 
+var hints = ['Elephant', 'Donkey', '45th President', 'House of the president', 'Capitol of the USA', 
+            'Action everyone needs to do every year'];
+  
 
 var wins = 0;
 var losses = 0;
@@ -43,14 +53,13 @@ var iterator = alphabet.values();
 for (const value of iterator){
        var btnval;
        btnval = value;
-  //  text += "<button>" + btnval + "</button>";
-
+      //appending the value and buttons to the alphabet div
     $("<button>", {id: value}).appendTo('.alphabet').text(value);
-    //document.body.appendChild(document.createElement('button'));
   
+    
 }
-document.getElementsByClassName(".alphabet").innerHTML = text;
 
+document.getElementsByClassName(".alphabet").innerHTML = text;
 
 
 
