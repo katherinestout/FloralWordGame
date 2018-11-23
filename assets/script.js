@@ -1,7 +1,6 @@
 window.onload = function(){
 //arrays
-var wordBank = [
-          'Republican', 'Democrat', 'Trump', 'Whitehouse', 'DC', 'vote'];
+var wordBank = ['Republican', 'Democrat', 'Trump', 'Whitehouse', 'DC', 'vote'];
 
 var alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n',
                     'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']; 
@@ -29,16 +28,14 @@ console.log("yay");
 
 //getting the index of the current word and hint to bind them
 //you could also put the hints and the word in an object...but for the sake of this we will just bind them
-var wordIndex = wordBank.indexOf(hintIndex);
-var hintIndex = wordBank.indexOf(currentWord);
+var wordIndex = wordBank.indexOf(wordBank);
+console.log(wordIndex);
+//var hintIndex = wordBank.indexOf(currentWord);
 
-showClue.innerHTML = "clue" + hints [wordIndex][hintIndex];
+//showClue.innerHTML = "clue" + hints [wordIndex][hintIndex];
 
 
-var catagoryIndex = categories.indexOf(chosenCategory);
-var hintIndex = chosenCategory.indexOf(word);
-showClue.innerHTML = "Clue: - " +  hints [catagoryIndex][hintIndex];
-};
+
 
 
 
