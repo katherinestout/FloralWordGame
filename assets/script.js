@@ -29,7 +29,6 @@ console.log("yay");
 
 
 var hintIndex = "";
-var wordIndex = "";
 
 //showClue.innerHTML = "clue" + hints [wordIndex][hintIndex];
 
@@ -43,9 +42,6 @@ showClue.innerHTML = "Clue: - " +  hints [catagoryIndex][hintIndex];
 //Generate a random word from the wordBank, store it in randomWord  
 var str = wordBank[Math.floor(Math.random() * wordBank.length)];
 
-var another = wordBank.indexOf(str);
-console.log(another);
-
 //convert str to lower case letters
 var currentWord = str.toLowerCase();
     console.log(currentWord);
@@ -53,6 +49,17 @@ var currentWord = str.toLowerCase();
 //lettersLeft is how many letters are in the word
 lettersLeft = currentWord.length;
 console.log(lettersLeft);
+
+//the index of the word chosen
+var wordIndex = wordBank.indexOf(str);
+console.log(wordIndex);
+//matches the index of the corresponding hint
+var hintIndex = wordIndex;
+console.log(hintIndex);
+hint = hints.indexOf(hintIndex);
+console.log(hint);
+
+
 
 //Generate spaces for how many letters currentWord has
   for(var i =0; i < currentWord.length; i++){
