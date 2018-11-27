@@ -20,24 +20,17 @@ var text ="";
 var lettersLeft = 0;
 
 var hint = "";
-
-function reset(){
- // ranWord();
- //lettersLeft=0;
-console.log("yay");
-}
-
-
 var hintIndex = "";
 
-//showClue.innerHTML = "clue" + hints [wordIndex][hintIndex];
+//reset function
+function reset(){ 
+  alert('reset');
+  count = 0;
+ // lettersLeft = 0;
+  answerArray = [];
+  incorrectGuess = 0;
+}
 
-/*
-var catagoryIndex = categories.indexOf(chosenCategory);
-var hintIndex = chosenCategory.indexOf(word);
-showClue.innerHTML = "Clue: - " +  hints [catagoryIndex][hintIndex];
-
-*/
 
 //Generate a random word from the wordBank, store it in randomWord  
 var str = wordBank[Math.floor(Math.random() * wordBank.length)];
@@ -54,11 +47,11 @@ console.log(lettersLeft);
 var wordIndex = wordBank.indexOf(str);
 console.log(wordIndex);
 //matches the index of the corresponding hint
-var hintIndex = wordIndex;
+hintIndex = wordIndex;
 console.log(hintIndex);
 
-hint = hints.indexOf('Elephant');
-console.log(hint);
+hint = hints.indexOf('Donkey');
+//console.log(hint);
 
 
 
@@ -107,7 +100,9 @@ btnval.onclick = check();
             if ( lettersLeft == 0 ){
              // alert("you win!");
               wins ++;
-              document.getElementById("wins").innerHTML = "Wins:" + wins;}
+              document.getElementById("wins").innerHTML = "Wins:" + wins;
+              reset();
+            }
             } 
           }
          if (found) return;
@@ -126,14 +121,6 @@ btnval.onclick = check();
          document.getElementById("losses").innerHTML = "Losses:" + losses; 
          reset();
       }
-       /*if ( lettersLeft == 0 ){
-        alert("you win!");
-        wins ++;
-        document.getElementById("wins").innerHTML = "Wins:" + wins;
-        // reset current word and reset incorrect/ correct guesses and guess
-      reset();
-
-       } */
        
     });
   };
