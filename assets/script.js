@@ -21,7 +21,7 @@ var currentWord = "";
 var hint = "";
 var hintIndex = "";
 
-
+//reset the values
 function init(){ 
   count = 0;
   lettersLeft = 0;
@@ -30,9 +30,10 @@ function init(){
   currentWord = "";
 }
 
-
+//Generating the word to guess function
 function initWord(){
-//Generate a random word from the wordBank, store it in randomWord  
+
+//generating a random word from the word bank, store in str
 var str = wordBank[Math.floor(Math.random() * wordBank.length)];
 
 //convert str to lower case letters
@@ -42,6 +43,7 @@ currentWord = str.toLowerCase();
 //lettersLeft is how many letters are in the word
 lettersLeft = currentWord.length;
 console.log(lettersLeft);
+
 
 //the index of the word chosen
 var wordIndex = wordBank.indexOf(str);
@@ -53,8 +55,10 @@ console.log(hintIndex);
 hint = hints.indexOf('Donkey');
 //console.log(hint);
 }
-function initPlayerWord(){
+
+
 //Generate spaces for how many letters currentWord has
+function initPlayerWord(){
   for(var i =0; i < currentWord.length; i++){
     answerArray[i] = "_";
   }
@@ -70,20 +74,21 @@ for (const value of iterator){
       //appending the value and buttons to the alphabet div
     $("<button>", {id: value}).appendTo('.alphabet').text(value);
 }
-
 document.getElementsByClassName(".alphabet").innerHTML = text;
 
 //assign each button a click event
 btnval.onclick = check();
 
-
+//click event
   function check(){
     $("body").on("click", "button", function(){
         //letter is equal to the id of the button (which is the letter)
         var letter = this.id;
+
       for(var i = 0; i < currentWord.length; i++){
           //if letter is equal to any of the current word letters
-          if(letter === currentWord[i]){
+
+      if(letter === currentWord[i]){
             var found = false;
             //then add it to the answer array
             answerArray[i] = letter;
@@ -93,37 +98,37 @@ btnval.onclick = check();
             //take away from lettersLeft
             lettersLeft --;
            // console.log(lettersLeft);
-            // - - -- - -  -- - - - - - -  -- -- - - - - why does it work up here? but not down there?
-            if ( lettersLeft == 0 ){
-             // alert("you win!");
+          
+      if ( lettersLeft == 0 ){
+              //add to wins if lettersLeft is equal to zero
               wins ++;
               document.getElementById("wins").innerHTML = "Wins:" + wins;
+              //reset the game
               initGame();
             }
             } 
           }
-         if (found) return;
+      if (found) return;
         //but if the letter isn't found add letter to the incorrectguess array
-         if(incorrectGuess.indexOf(letter) < 0){
+      if(incorrectGuess.indexOf(letter) < 0){
            incorrectGuess.push(letter);
            document.getElementById("incorrect").innerHTML = incorrectGuess.join(" ");
          }
       //the count goes up every time a guess is made
       count ++;
       document.getElementById("guesses").innerHTML = "Guesses:" + count;
-      //if the user goes over 20 tries, their loser score goes up
-      if (count>20){
-         //alert("You lose! Try again ^__^");
+
+        if (count>20){
+        //if the count is over twenty then the losses goes up
          losses ++;
          document.getElementById("losses").innerHTML = "Losses:" + losses; 
+         //reset the game
          initGame();
       }
        
     });
   };
-
-
-
+//function that fires other functions
 function initGame(){
   init();
   initWord();
@@ -133,9 +138,8 @@ function initGame(){
 function runGame(){
   initGame();
   }
+//Executing the game
   runGame();
-
-
 
 };
 
