@@ -1,2 +1,2 @@
 # PoliticsGame
-This is a hangman style game that utlizes vanilla javascript and jquery.
+This is a hangman style word guess game that utlizes vanilla javascript and jquery.
