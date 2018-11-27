@@ -24,11 +24,12 @@ var hintIndex = "";
 
 //reset function
 function reset(){ 
+  alert(currentWord);
   alert('reset');
   count = 0;
- // lettersLeft = 0;
+  lettersLeft = 0;
   answerArray = [];
-  incorrectGuess = 0;
+  incorrectGuess = [];
 }
 
 
@@ -95,7 +96,7 @@ btnval.onclick = check();
             found = true;
             //take away from lettersLeft
             lettersLeft --;
-            console.log(lettersLeft);
+           // console.log(lettersLeft);
             // - - -- - -  -- - - - - - -  -- -- - - - - why does it work up here? but not down there?
             if ( lettersLeft == 0 ){
              // alert("you win!");
