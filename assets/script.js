@@ -1,14 +1,12 @@
 window.onload = function(){
 //arrays
 var wordBank = ['Republican', 'Democrat', 'Trump', 'Whitehouse', 'DC', 'vote'];
-
 var alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n',
                     'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']; 
 
 var hints = ['Elephant', 'Donkey', '45th President', 'House of the president', 'Capitol of the USA', 
             'Action everyone needs to do every year'];
   
-
 var wins = 0;
 var losses = 0;
 
@@ -18,26 +16,27 @@ var space;
 var count = 0;
 var text ="";
 var lettersLeft = 0;
+var currentWord = "";
 
 var hint = "";
 var hintIndex = "";
 
-//reset function
-function reset(){ 
-  alert(currentWord);
-  alert('reset');
+
+function init(){ 
   count = 0;
   lettersLeft = 0;
   answerArray = [];
   incorrectGuess = [];
+  currentWord = "";
 }
 
 
+function initWord(){
 //Generate a random word from the wordBank, store it in randomWord  
 var str = wordBank[Math.floor(Math.random() * wordBank.length)];
 
 //convert str to lower case letters
-var currentWord = str.toLowerCase();
+currentWord = str.toLowerCase();
     console.log(currentWord);
 
 //lettersLeft is how many letters are in the word
@@ -53,15 +52,15 @@ console.log(hintIndex);
 
 hint = hints.indexOf('Donkey');
 //console.log(hint);
-
-
-
+}
+function initPlayerWord(){
 //Generate spaces for how many letters currentWord has
   for(var i =0; i < currentWord.length; i++){
     answerArray[i] = "_";
   }
   space = answerArray.join(" ");
   document.getElementById("answer").innerHTML = space;
+}
 
 //for each letter in the alphabet, list it out and create a button
 var iterator = alphabet.values();
@@ -70,16 +69,13 @@ for (const value of iterator){
        btnval = value;
       //appending the value and buttons to the alphabet div
     $("<button>", {id: value}).appendTo('.alphabet').text(value);
-  
-    
 }
 
 document.getElementsByClassName(".alphabet").innerHTML = text;
 
-
-
 //assign each button a click event
 btnval.onclick = check();
+
 
   function check(){
     $("body").on("click", "button", function(){
@@ -102,7 +98,7 @@ btnval.onclick = check();
              // alert("you win!");
               wins ++;
               document.getElementById("wins").innerHTML = "Wins:" + wins;
-              reset();
+              initGame();
             }
             } 
           }
@@ -120,10 +116,26 @@ btnval.onclick = check();
          //alert("You lose! Try again ^__^");
          losses ++;
          document.getElementById("losses").innerHTML = "Losses:" + losses; 
-         reset();
+         initGame();
       }
        
     });
   };
+
+
+
+function initGame(){
+  init();
+  initWord();
+  initPlayerWord();
+}
+
+function runGame(){
+  initGame();
+  }
+  runGame();
+
+
+
 };
 
