@@ -39,28 +39,48 @@ currentWord = str.toLowerCase();
 //lettersLeft is how many letters are in the word
 lettersLeft = currentWord.length;
 console.log(lettersLeft);
+hintsFunction();
 
+function hintsFunction(){
+  $("#vowelsshow").toggle();
+  $("#showone").show();
+  $("#showone").on('click',(function(){
+    $("#vowelsshow").show();
+    $("#showone").hide();
+  
+  })
+  );
+  
+  $("#lettersshow").toggle();
+  $("#showtwo").show();
+  $("#showtwo").on('click',(function(){
+    $("#lettersshow").show();
+    $("#showtwo").hide();
+  })
+  );
+  
+  //hints section
+  var subject = currentWord;
+  
+  //counting how many vowels there are
+  function getVowels(subject) {
+    var m = subject.match(/[aeiou]/gi);
+    return m === null ? 0 : m.length;
+  }
+  
+  var vowels = getVowels(subject);
+  console.log(vowels);
+  
+  document.getElementById("numbervowels").innerHTML = vowels;
+  
+  //getting the last letter of the word
+  var lastLetter = subject.charAt(subject.length -1);
+  console.log(lastLetter);
+  
+  document.getElementById("lastletter").innerHTML = lastLetter;
 
-
-//hints section
-var subject = currentWord;
-
-//counting how many vowels there are
-function getVowels(subject) {
-  var m = subject.match(/[aeiou]/gi);
-  return m === null ? 0 : m.length;
 }
 
-var vowels = getVowels(subject);
-console.log(vowels);
-
-document.getElementById("numbervowels").innerHTML = vowels;
-
-//getting the last letter of the word
-var lastLetter = subject.charAt(subject.length -1);
-console.log(lastLetter);
-
-document.getElementById("lastletter").innerHTML = lastLetter;
 
 
 }
@@ -85,14 +105,8 @@ for (const value of iterator){
       //appending the value and buttons to the alphabet div
     $("<button>", {id: value}).appendTo('.alphabet').text(value);
 }
+
 document.getElementsByClassName(".alphabet").innerHTML = text;
-
-
-
-
-
-
-
 
 //assign each button a click event
 btnval.onclick = check();
