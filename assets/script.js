@@ -41,8 +41,8 @@ lettersLeft = currentWord.length;
 console.log(lettersLeft);
 
 
-//hints section
 
+//hints section
 var subject = currentWord;
 
 //counting how many vowels there are
@@ -54,23 +54,18 @@ function getVowels(subject) {
 var vowels = getVowels(subject);
 console.log(vowels);
 
+document.getElementById("numbervowels").innerHTML = vowels;
 
-function vowelFunction(){
- 
-  document.getElementsByClassName(".numbervowels").innerHTML = vowels;
-  
-  }
+//getting the last letter of the word
+var lastLetter = subject.charAt(subject.length -1);
+console.log(lastLetter);
 
+document.getElementById("lastletter").innerHTML = lastLetter;
 
-
-
-
-//onclick event
-//say how many vowels the word has
-//display the last letter of the word
-//2 hints
 
 }
+
+
 
 
 //Generate spaces for how many letters currentWord has
@@ -91,6 +86,13 @@ for (const value of iterator){
     $("<button>", {id: value}).appendTo('.alphabet').text(value);
 }
 document.getElementsByClassName(".alphabet").innerHTML = text;
+
+
+
+
+
+
+
 
 //assign each button a click event
 btnval.onclick = check();
@@ -149,6 +151,7 @@ function initGame(){
   init();
   initWord();
   initPlayerWord();
+  
 }
 
 function runGame(){
