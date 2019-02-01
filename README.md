@@ -1,4 +1,4 @@
-# Floral Word Guess Game
+# Guess the Flower Game
 This is a "hangman-style" word guess game that utlizes Vanilla Javascript and jQuery.
 
 Full deployed version: https://katherinestout.github.io/FloralWordGame/
