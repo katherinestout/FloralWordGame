@@ -1,11 +1,12 @@
 body {
     margin: 0;
+   
 
 }
 
 .game{
-    background-color: lightcoral;
-    height: 1000px;
+
+    height: 100%;
     top: 0;
     padding: 30px;
 
