@@ -165,7 +165,7 @@ function initGame(){
   init();
   initWord();
   initPlayerWord();
-  
+  //experiment
 }
 
 function runGame(){
