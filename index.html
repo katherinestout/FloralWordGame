@@ -19,12 +19,13 @@
 
 </head>
 <body>
+    <div class="game">
     <div class = "container container-fluid">
         <div class="row">
       
         <div class="col-sm-12">
-        <h1>Political Word Guess Game</h1>
-        <p>Try to guess the word! You have twenty chances ^_^</p>
+        <h1>Floral Word Guess Game</h1>
+        <p>Try to guess the flower! You have twenty chances ^_^</p>
         </div>
         </div>
       
@@ -45,17 +46,35 @@
             <p id= "counter"> </p>
             <p id ="letter"></p>
             </div>
-      </div>      
-      
+      </div>   
       <div class="row">
-        <div class="col-sm-12">
+            <div class="col-sm-6">
+            <h2>Hints:</h2>
+     
+               <button id = "vowels">Number Of Vowels:</button>
+               <div class = "numbervowels"></div>
+               <button>Last letter: </button>
+               <div class="lastletter"></div>
+           
+               </div>
+         
+      
+  
+        <div class="col-sm-6">
             <h2 >Incorrect Letters:</h2>
+            <br>
             <p id ="incorrect">-</p>
-            <div class = "alphabet">
-            </div>
+           
         </div>
+
     </div>
-       
+       <div class="row">
+           <div class="col-sm-12">
+
+                <div class = "alphabet">
+                    </div>
+           </div>
+       </div>
 
      
        
@@ -68,5 +87,6 @@
         </div>
     </footer>
             </div>
+        </div>
     </body>
     </html>

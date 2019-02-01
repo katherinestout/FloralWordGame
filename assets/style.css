@@ -1,12 +1,24 @@
 body {
-    padding: 10px;
+    margin: 0;
+
+}
+
+.game{
+    background-color: lightcoral;
+    height: 1000px;
+    top: 0;
+    padding: 30px;
+
 }
 
 .container {
     font-family: 'Shadows Into Light', cursive;
     text-align: center;
-    background: lightblue;
+    background: lightpink;
     width: 100%;
-    height: 100%;
     padding: 30px;
+}
+
+.alphabet {
+    padding: 20px;
 }

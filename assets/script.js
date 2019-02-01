@@ -1,11 +1,9 @@
 window.onload = function(){
 //arrays
-var wordBank = ['Republican', 'Democrat', 'Trump', 'Whitehouse', 'DC', 'vote'];
+var wordBank = ['Sunflower', 'Petunia', 'Rose', 'Carnation', 'Daisy', 'Lily'];
+
 var alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n',
                     'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']; 
-
-var hints = ['Elephant', 'Donkey', '45th President', 'House of the president', 'Capitol of the USA', 
-            'Action everyone needs to do every year'];
   
 var wins = 0;
 var losses = 0;
@@ -18,8 +16,6 @@ var text ="";
 var lettersLeft = 0;
 var currentWord = "";
 
-var hint = "";
-var hintIndex = "";
 
 //reset the values
 function init(){ 
@@ -45,15 +41,35 @@ lettersLeft = currentWord.length;
 console.log(lettersLeft);
 
 
-//the index of the word chosen
-var wordIndex = wordBank.indexOf(str);
-console.log(wordIndex);
-//matches the index of the corresponding hint
-hintIndex = wordIndex;
-console.log(hintIndex);
+//hints section
 
-hint = hints.indexOf('Donkey');
-//console.log(hint);
+var subject = currentWord;
+
+//counting how many vowels there are
+function getVowels(subject) {
+  var m = subject.match(/[aeiou]/gi);
+  return m === null ? 0 : m.length;
+}
+
+var vowels = getVowels(subject);
+console.log(vowels);
+
+
+function vowelFunction(){
+ 
+  document.getElementsByClassName(".numbervowels").innerHTML = vowels;
+  
+  }
+
+
+
+
+
+//onclick event
+//say how many vowels the word has
+//display the last letter of the word
+//2 hints
+
 }
 
 
